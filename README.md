@@ -71,3 +71,10 @@ The following ways of navigation exist:
 * Drag node: Move node
 * Mouse wheel: Zoom in/out
 
+Contact
+-------
+
+Philipp Blohm
+p.blohm@clueda.com
+
+The Word Space Visualization tool is distributed under GNU Public License (GPL).
