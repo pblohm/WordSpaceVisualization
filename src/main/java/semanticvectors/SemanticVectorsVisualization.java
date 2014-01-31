@@ -25,7 +25,7 @@ import visualization.PrefuseVisualization;
 public class SemanticVectorsVisualization {
 
     public final static String STOPWORD_LIST = "stopwords.txt";
-    public static String TERM_VECTOR_FILE = "WSMs/defaulttermvectors.bin";
+    public static String TERM_VECTOR_FILE = "WSMs/defaulttermvectors";
     public static String TEXT_MINING_FILE = "TMs/defaultTMresults.txt";
     InteractionGraph g;
     Set<String> type_filter;

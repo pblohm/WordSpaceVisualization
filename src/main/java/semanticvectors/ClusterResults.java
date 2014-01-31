@@ -101,7 +101,7 @@ public class ClusterResults {
   }
   
     public static Tuple<int[], List<ObjectVector>> cluster(InteractionGraph g, List<Term> terms, int numclusters, int numEvidencesFilter, List<Term> centers) {
-        String[] args = ("-numclusters " + (numclusters) + " -numsearchresults 0 -queryvectorfile "+ SemanticVectorsVisualization.TERM_VECTOR_FILE).split(" ");
+        String[] args = ("-numclusters " + (numclusters) + " -numsearchresults 0 -queryvectorfile "+ SemanticVectorsVisualization.TERM_VECTOR_FILE+".bin").split(" ");
         args = Flags.parseCommandLineFlags(args);
 
         VectorStoreReaderLucene vecReader = null;

@@ -77,6 +77,7 @@ import prefuse.visual.expression.InGroupPredicate;
 import semanticvectors.ClusterTree;
 import semanticvectors.MyBuildIndex;
 import semanticvectors.MyIndexFiles;
+import semanticvectors.MyLSA;
 import semanticvectors.SemanticVectorsVisualization;
 import util.IOHandler;
 
@@ -689,10 +690,12 @@ public class PrefuseVisualization {
                     if(lsa.isSelected()){
                         try {
                             MyIndexFiles.indexCorpus(file.getPath(), SemanticVectorsVisualization.TERM_VECTOR_FILE, true);
-                            LSA.main(new String[]{"-minfrequency","-1","-maxnonalphabetchars","-1",SemanticVectorsVisualization.TERM_VECTOR_FILE});
+                            MyLSA.createVectors(new String[]{"-dimension","200","-minfrequency","-1","-maxnonalphabetchars","-1", SemanticVectorsVisualization.TERM_VECTOR_FILE});
                             vectors_label.setText("<html><body>Loaded WSM: <br>"+SemanticVectorsVisualization.TERM_VECTOR_FILE.substring(5)+"</body></html>");
                         } catch (Exception ex) {
-                            JOptionPane.showMessageDialog(mainframe,"Error. Word space model could not be created","Error",JOptionPane.ERROR_MESSAGE);
+                            JOptionPane.showMessageDialog(mainframe,"Error. Word space model could not be created."
+                                    + "Please choose a folder with at least 200 files in it.","Error",JOptionPane.ERROR_MESSAGE);
+                            ex.printStackTrace();
                         }
                         
                     } else{
@@ -716,7 +719,7 @@ public class PrefuseVisualization {
                 if (returnVal == JFileChooser.APPROVE_OPTION) {
                         File file = fc.getSelectedFile();
 
-                        String s = file.getPath();
+                        String s = file.getPath().substring(0,file.getPath().length()-4);
                         SemanticVectorsVisualization.TERM_VECTOR_FILE = s;
                         if (s.contains("WSMs/")) {
                             String t = s.substring(s.indexOf("WSMs/") + 5);
