@@ -1,6 +1,8 @@
 WordSpaceVisualization
 ======================
 
+![Alt text](/images/prot.png)
+
 The word space visualization tool supports the intuitive comprehension of text mining results. It combines associations from a word space model with the explicit results of an event extraction system. 
 
 Running WSV
