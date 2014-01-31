@@ -868,7 +868,7 @@ public class PrefuseVisualization {
                 + "<p>When loading a new visualization first<br>"
                 + "the clustered terms occurring in the text<br>"
                 + "mining results are shown. By entering a<br>"
-                + "a search term at the top of the tool the<br>"
+                + "search term at the top of the tool the<br>"
                 + "semantic visualization centered around<br>"
                 + "this term is shown.</p>"
                 + "<p>Multiple terms can be entered into the<br>"
